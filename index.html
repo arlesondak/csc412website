@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <style>
+            body {margin:0;}
+
+            #myUL {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #4CAF50;
+            }
+
+        </style>
+        <title>
+            CSC412 Introduction Page
+        </title>
+
+        <meta http-equiv="Content-Type"
+              content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="site.css">
+
+        <script>
+            $(document).ready(function () {
+                $("button").click(function () {
+                    $("#disapear").hide();
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <ul id="myUL">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="current.html">Current</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul> 
+        <div style="padding:20px;margin-top:30px;background-color:#aabcde;height:1500px;">
+            <h1>Hello world!</h1>
+            <p>This is the page of Andrew Lesondak</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum</p>
+            <p>Click the "Random" button to set the backgroundColor property of the navigation bar to a random color:</p>
+            <button onclick="myFunction()">Random</button>
+            
+            <p> Click the below button to watch text go away</p>
+            <p id="disapear">This text will go away!</p>
+
+            <button>Click me</button>
+        </div>
+
+        <script>
+            function myFunction() {
+                var letters = '0123456789ABCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                //return color;
+                document.getElementById("myUL").style.backgroundColor = color;
+            }
+        </script>
+    </body>
+</html>
